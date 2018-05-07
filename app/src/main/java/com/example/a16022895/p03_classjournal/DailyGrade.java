@@ -2,9 +2,9 @@ package com.example.a16022895.p03_classjournal;
 
 public class DailyGrade {
     private String week;
-    private Character grade;
+    private String grade;
 
-    public DailyGrade(String week, Character grade) {
+    public DailyGrade(String week, String grade) {
         this.week = week;
         this.grade = grade;
     }
@@ -17,11 +17,11 @@ public class DailyGrade {
         this.week = week;
     }
 
-    public Character getGrade() {
+    public String getGrade() {
         return grade;
     }
 
-    public void setGrade(Character grade) {
+    public void setGrade(String grade) {
         this.grade = grade;
     }
 }

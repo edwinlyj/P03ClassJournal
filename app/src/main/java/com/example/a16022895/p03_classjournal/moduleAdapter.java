@@ -8,9 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class moduleAdapter extends ArrayAdapter<Modules> {
+public class moduleAdapter extends ArrayAdapter<Modules> implements Serializable{
 
     private ArrayList<Modules> objects;
     private Context context;
@@ -43,8 +44,8 @@ public class moduleAdapter extends ArrayAdapter<Modules> {
         //  We get back the object at the same index.
         Modules object = objects.get(pos);
         // Set the TextView to show the object info
-        tv1.setText(object.getMmoduleCode());
-        tv2.setText(object.getMmoduleName());
+        tv1.setText(object.getModuleCode());
+        tv2.setText(object.getModuleName());
         // Return this row that is being populated.
         return rowView;
     }

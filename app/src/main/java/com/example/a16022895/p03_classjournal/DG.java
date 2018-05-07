@@ -2,13 +2,20 @@ package com.example.a16022895.p03_classjournal;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class DG extends AppCompatActivity {
 
+    ListView lv;
+    ArrayAdapter aa;
+    ArrayList<DailyGrade> dailyGrades;
     Button btnRP;
     Button btnEmails;
 
@@ -17,6 +24,7 @@ public class DG extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dg);
+
 
         btnRP = (Button) findViewById(R.id.buttonInfo);
         btnRP.setOnClickListener(new View.OnClickListener() {
@@ -43,5 +51,11 @@ public class DG extends AppCompatActivity {
 
             }
         });
+        dailyGrades = new ArrayList<DailyGrade>();
+        dailyGrades.add(new DailyGrade("week 1" , "A"));
+        lv = (ListView) this.findViewById(R.id.dg);
+        aa = new DGAdapter(this, R.layout.row, dailyGrades);
+        lv.setAdapter(aa);
+
     }
 }

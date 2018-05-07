@@ -1,28 +1,30 @@
 package com.example.a16022895.p03_classjournal;
 
-public class Modules {
+import java.io.Serializable;
 
-    private String mmoduleName;
-    private String mmoduleCode;
+public class Modules implements Serializable{
 
-    public Modules(String mmoduleName, String mmoduleCode) {
-        this.mmoduleName = mmoduleName;
-        this.mmoduleCode = mmoduleCode;
+    private String moduleName;
+    private String moduleCode;
+
+    public Modules(String moduleName, String moduleCode) {
+        this.moduleName = moduleName;
+        this.moduleCode = moduleCode;
     }
 
-    public String getMmoduleName() {
-        return mmoduleName;
+    public String getModuleName() {
+        return moduleName;
     }
 
-    public void setMmoduleName(String mmoduleName) {
-        this.mmoduleName = mmoduleName;
+    public void setModuleName(String moduleName) {
+        this.moduleName = moduleName;
     }
 
-    public String getMmoduleCode() {
-        return mmoduleCode;
+    public String getModuleCode() {
+        return moduleCode;
     }
 
-    public void setMmoduleCode(String mmoduleCode) {
-        this.mmoduleCode = mmoduleCode;
+    public void setModuleCode(String moduleCode) {
+        this.moduleCode = moduleCode;
     }
 }

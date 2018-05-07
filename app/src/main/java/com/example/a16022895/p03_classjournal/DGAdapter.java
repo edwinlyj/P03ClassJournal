@@ -30,7 +30,7 @@ public class DGAdapter extends ArrayAdapter{
 
         DailyGrade currentDailyGrade = dailyGrades.get(position);
 
-        week.setText(currentDailyGrade.getWeek());
+        week.setText("week " + currentDailyGrade.getWeek());
         dg.setText(currentDailyGrade.getGrade());
 
         return rowView;

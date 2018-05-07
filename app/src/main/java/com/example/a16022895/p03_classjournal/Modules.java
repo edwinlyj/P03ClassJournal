@@ -9,4 +9,20 @@ public class Modules {
         this.mmoduleName = mmoduleName;
         this.mmoduleCode = mmoduleCode;
     }
+
+    public String getMmoduleName() {
+        return mmoduleName;
+    }
+
+    public void setMmoduleName(String mmoduleName) {
+        this.mmoduleName = mmoduleName;
+    }
+
+    public String getMmoduleCode() {
+        return mmoduleCode;
+    }
+
+    public void setMmoduleCode(String mmoduleCode) {
+        this.mmoduleCode = mmoduleCode;
+    }
 }

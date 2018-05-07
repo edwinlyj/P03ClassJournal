@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         modulesList.add(new Modules("Android Programming II" , "C357"));
 
         // Create the ArrayAdapter object.
-        moduleAdapter adapter = new moduleAdapter(this, R.layout.list_item, Modules);
+        moduleAdapter adapter = new moduleAdapter(this, R.layout.list_item, modulesList);
         ListView lv = (ListView) findViewById(R.id.lv);
         lv.setAdapter(adapter);
 

@@ -4,15 +4,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
-    ListView lv;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        lv = (ListView) findViewById(R.id.lv);
+
+        ArrayList<Modules> modulesList = new ArrayList<>();
+        modulesList.add(new Modules("Android Programming II" , "C357"));
+
+        // Create the ArrayAdapter object.
+        moduleAdapter adapter = new moduleAdapter(this, R.layout.list_item, Modules);
+        ListView lv = (ListView) findViewById(R.id.lv);
+        lv.setAdapter(adapter);
 
 
     }

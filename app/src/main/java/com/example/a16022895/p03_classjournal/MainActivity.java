@@ -17,7 +17,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final ArrayList<Modules> modulesList = new ArrayList<>();
-        modulesList.add(new Modules("Android Programming II" , "C357"));
+        modulesList.add(new Modules(0,"Android Programming II" , "C357"));
+        modulesList.add(new Modules(1,"Web Services" , "C302"));
+
 
         // Create the ArrayAdapter object.
         moduleAdapter adapter = new moduleAdapter(this, R.layout.list_item, modulesList);
@@ -27,11 +29,20 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
                 int pos = lv.getPositionForView(view);
-                Modules module = new Modules(modulesList.get(pos).getModuleName(), modulesList.get(pos).getModuleCode());
-                Intent i = new Intent(MainActivity.this, DG.class);
-                i.putExtra("module", module);
-                startActivity(i);
+                if (pos == 0) {
+                    Modules module = new Modules(modulesList.get(pos).getModuleNum(),modulesList.get(pos).getModuleName(), modulesList.get(pos).getModuleCode());
+                    Intent i = new Intent(MainActivity.this, DG.class);
+                    i.putExtra("module", module);
+                    startActivity(i);
+                }
+                else{
+                    Modules module = new Modules(modulesList.get(pos).getModuleNum(),modulesList.get(pos).getModuleName(), modulesList.get(pos).getModuleCode());
+                    Intent i = new Intent(MainActivity.this, DG.class);
+                    i.putExtra("module", module);
+                    startActivity(i);
+                }
             }
         });
 

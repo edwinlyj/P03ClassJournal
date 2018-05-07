@@ -1,18 +1,15 @@
 package com.example.a16022895.p03_classjournal;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
 public class DG extends AppCompatActivity {
 
@@ -30,7 +27,18 @@ public class DG extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dg);
 
+        Intent i = getIntent();
+        Modules mod = (Modules) i.getSerializableExtra("module");
+        dailyGrades = new ArrayList<DailyGrade>();
 
+        if(mod.getModuleNum() == 0){
+            dailyGrades.add(new DailyGrade("1" , "A"));
+        }else{
+            dailyGrades.add(new DailyGrade("1" , "C"));
+        }
+        lv = (ListView) this.findViewById(R.id.dg);
+        aa = new DGAdapter(this, R.layout.row, dailyGrades);
+        lv.setAdapter(aa);
         btnRP = (Button) findViewById(R.id.buttonInfo);
         btnRP.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,11 +70,7 @@ public class DG extends AppCompatActivity {
 
             }
         });
-        dailyGrades = new ArrayList<DailyGrade>();
-        dailyGrades.add(new DailyGrade("1" , "A"));
-        lv = (ListView) this.findViewById(R.id.dg);
-        aa = new DGAdapter(this, R.layout.row, dailyGrades);
-        lv.setAdapter(aa);
+
 
 
 

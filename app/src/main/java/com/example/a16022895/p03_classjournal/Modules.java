@@ -4,12 +4,22 @@ import java.io.Serializable;
 
 public class Modules implements Serializable{
 
+    private int moduleNum;
     private String moduleName;
     private String moduleCode;
 
-    public Modules(String moduleName, String moduleCode) {
+    public Modules(int moduleNum, String moduleName, String moduleCode) {
+        this.moduleNum = moduleNum;
         this.moduleName = moduleName;
         this.moduleCode = moduleCode;
+    }
+
+    public int getModuleNum() {
+        return moduleNum;
+    }
+
+    public void setModuleNum(int moduleNum) {
+        this.moduleNum = moduleNum;
     }
 
     public String getModuleName() {
